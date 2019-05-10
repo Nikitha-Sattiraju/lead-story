@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <!-- set the character set -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- first step to a responsive site -->
+    <title>HTML Skeleton</title>
+
+    <!-- FONT AWESOME -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Your styles should be called here -->
+
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <!-- -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      	  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      	<![endif]-->
+  </head>
+
+  <body>
+    <!-- YOUR CONTENT GOES HERE -->
+
+    <div class="header">
+      <!-- The background photo is in the stylesheet -->
+      <div class="image">
+        <div class="section-wrap">
+          <h1 class="landing-page">Invisible Poisoning<span class="subhead">
+            </span></h1>
+
+          <!-- <span class="intro-text"> -->
+          <div class="billboard-text">
+            <p>Close to 90,000 children tested positive for unsafe blood lead levels in 2016, according to the Center for Disease Control and Prevention (CDC). But that does not give us the full picture. </p>
+            <p class="byline"> By Nikitha Sattiraju & Karishma Vanjani</p>
+          </div>
+          <!-- </span> -->
+          <!-- <input type="button" id="go" value="Go Now" /> -->
+          <form>
+            <input type="button" id="start" class="start-btn" value="Enter" id="familyYes_btn" data-id="your-dwelling" />
+          </form>
+        </div>
+      </div>
+      <!-- end section-wrap-->
+    </div>
+
+    <!-- <section>
+      <div>
+        <figure class="lead-image">
+          <img src="Images_Lead/lead-warning.jpg" />
+          <figcaption> A recent study revealed that the number of children with elevated blood lead levels as of 1999-2010 is 1.2 million</figcaption>
+        </figure>
+
+        <div class="headline">
+          <h1> Lead Poisoning Continues to Affect American Children </h1>
+        </div>
+      </div>
+    </section> -->
+
+
+    <div class="intro hide" id="your-dwelling-background">
+      <section class="intro hide" id="your-dwelling">
+        <p> Tens of thousands of children in the country continue to test positive for unsafe blood lead levels. However, CDC data on childhood lead poisoning is an underrepresentation of the extent to which American children are affected. At
+          present, CDC only funds 35 state and local programs to report the number of children that tested positive for high lead levels in their blood. The remaining states may volunteer the information should their state health programs choose to
+          but are not required to do so. As a result, there is no data on childhood lead poisoning for several states as shown in the map below. The latest available data is only until 2016.</p>
+
+        <div class="container">
+          <h3> </h3>
+          <hr>
+          </hr>
+          <h2> Find out what percentage of children tested positive for unsafe blood lead levels in your state.</h2>
+
+          <form>
+            <select id="character">
+              <option value="">Choose a state...</option>
+            </select>
+            <br><br>
+            <!-- <input id="enter" type="submit"> -->
+          </form>
+
+          <div id="favorites"></div>
+
+          <!-- templating occurs here -->
+
+          <script type="text/html" id="person_template">
+            <div class="state">
+        <%= person.state %>
+      </div>
+      <!-- <img src="<%=person.imglocation%>" /> -->
+      <div class="law">
+  <%= person.law %>
+      </div>
+
+      <div class="container">
+    <div class="style">Total Number of Children in 2016</div>
+      </div>
+
+      <div class="population">
+        <%= person.population.toLocaleString() %>
+      </div>
+      <div class="container">
+      <div class="style">Children With Unsafe Blood Lead Levels </div>
+      </div>
+
+      <div class="lead1"> <%= person.bll %> </div>
+    </script>
+
+
+          <script type="text/html" id="select_template">
+            <option value="<%= state %>"><%= state %></option>
+        </script>
+
+
+          <!-- the jQuery library. You need this to be able to use jQuery ($) -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <!-- Your javascript should be called here -->
+
+          <!-- link to lodash cdn -->
+          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js"></script>
+        </div>
+
+
+        <hr>
+        </hr>
+        <section class="intro">
+          <p>According to a study by the the Public Health Institute's California Environmental Health Tracking Program, the number of children with elevated blood lead levels between 1999-2010 was 1.2 million, which is double what the CDC reported.
+            Lead poisoning, even at low levels, can have serious implications for childhood development. It can affect children's IQ, behaviour as well as hearing. However, parents often have a hard time linking these symptoms to lead poisoning and
+            therefore don't get their children tested, according to Jill Samuels, program administrator, the lead poisoning prevention and treatment program at the children's hospital at Montefiore, New York City. As a result, many children are not
+            tested or treated.</p>
+
+        </section>
+
+        <section>
+          <div class="map">
+
+            <h2> Percentage of Children Tested Positive for Elevated Blood Lead Levels (2016)</h2>
+            <p class="maphead"> States with no color did not report any data </p>
+            s
+            <iframe width="100%" height="520" frameborder="0" src="https://nikitha-sattiraju.carto.com/builder/2a918e89-c662-41f8-8bcb-0a047d54cfa1/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+          </div>
+        </section>
+
+      </section>
+    </div>
+    <!-- the main js file -->
+    <script src="main.js"></script>
+
+    <!-- link to data -->
+    <script src="data.js"></script>
+
+  </body>
+
+</html>
